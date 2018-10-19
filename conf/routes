@@ -16,7 +16,7 @@ POST 	/excluirReserva/{idUsuario}/{idReserva}	Reservas.deleteReserva()
 #Usuarios
 GET		/usuario/{id}							Usuarios.getUsuarioById()
 POST 	/usuario								Usuarios.novoUsuario()
-
+POST    /login									Usuarios.login()
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
