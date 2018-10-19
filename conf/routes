@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+# Salas
+GET		/salas									Salas.getAllSalas()
+
+#Reservas
+POST	/reservas/sala/{sala}					Reservas.getReservaBySalaEData()
+GET		/reservas/usuario/{idUser}				Reservas.getReservasByUsuario()
+POST 	/excluirReserva/{idUsuario}/{idReserva}	Reservas.deleteReserva()
+
+#Usuarios
+GET		/usuario/{id}							Usuarios.getUsuarioById()
+POST 	/usuario								Usuarios.novoUsuario()
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
